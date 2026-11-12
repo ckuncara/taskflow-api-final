@@ -21,13 +21,13 @@ https://taskflow-api-final.onrender.com
 
 Your Railway dashboard showing the active deployment. Save the image in the `screenshots/` folder and update the file name below if needed.
 
-screenshots/renderDashboard.png
+![screenshots/renderDashboard.png]
 
 ### Screenshot: Live application
 
 Your live Railway URL returning task data (in your browser or terminal).
 
-screenshots/renderUrl.png
+![screenshots/renderUrl.png]
 
 ### Errors and failures
 
