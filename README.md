@@ -89,6 +89,19 @@ The application starts on `http://localhost:8080`.
 | GET    | `/api/tasks/{id}` | Get a single task by ID  | —             | `200 OK`          |
 | POST   | `/api/tasks`      | Create a new task        | Task JSON     | `201 Created`     |
 
+## Deploy the frontend to Netlify
+
+The static frontend is in the `frontend/` directory. It lists tasks and lets you create them through the deployed TaskFlow API.
+
+1. Push this repository to GitHub.
+2. In Netlify, choose **Add new site** → **Import an existing project**, connect GitHub, and select this repository.
+3. Set **Base directory** to the repository root, leave **Build command** empty, and set **Publish directory** to `frontend`. Deploy the site.
+4. Copy the Netlify site URL, for example `https://your-taskflow-site.netlify.app`.
+5. In Render, open your API service and go to **Environment**. Add `FRONTEND_URL` with the exact Netlify URL as its value (no trailing slash), then save and redeploy the service.
+6. Open the Netlify site. The API URL field is prefilled with `https://taskflow-api-final.onrender.com`; replace it with your actual Render service URL if different, then choose **Connect**. Use **Refresh** to reload tasks or the form to add one.
+
+The API allows browser requests only from the origin configured by `FRONTEND_URL`. For local frontend testing, the default is `http://localhost:5500`; run the API with `./mvnw spring-boot:run` and, in another terminal, run `python3 -m http.server 5500 --directory frontend`.
+
 ### Testing the API
 
 Create a task:

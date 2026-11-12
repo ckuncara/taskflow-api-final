@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple dashboard for your TaskFlow tasks."
+    />
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="TaskFlow home">
+          <span class="brand-mark" aria-hidden="true">T</span>
+          <span>TaskFlow</span>
+        </a>
+        <span class="api-label"><span class="status-dot"></span> API dashboard</span>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow">YOUR WORK, IN FLOW</p>
+        <h1>Make room for <span>what matters.</span></h1>
+        <p class="intro-copy">
+          A clear view of your tasks, priorities, and what comes next.
+        </p>
+      </section>
+
+      <section class="connection-panel" aria-label="API connection">
+        <div>
+          <label for="api-url">Backend API URL</label>
+          <p>Use your deployed Render service URL.</p>
+        </div>
+        <div class="connection-controls">
+          <input
+            id="api-url"
+            type="url"
+            value="https://taskflow-api-final.onrender.com"
+            placeholder="https://your-service.onrender.com"
+            autocomplete="url"
+            required
+          />
+          <button id="connect-button" class="button button-dark" type="button">
+            Connect
+          </button>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Task manager">
+        <div class="list-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">OVERVIEW</p>
+              <h2>Your tasks</h2>
+            </div>
+            <button id="refresh-button" class="button button-light" type="button">
+              Refresh
+            </button>
+          </div>
+          <p id="status-message" class="status-message" role="status" aria-live="polite">
+            Connect to your API to load tasks.
+          </p>
+          <div id="task-list" class="task-list"></div>
+        </div>
+
+        <aside class="form-panel">
+          <p class="eyebrow">KEEP IT MOVING</p>
+          <h2>Add a task</h2>
+          <form id="task-form">
+            <label for="title">Task title</label>
+            <input id="title" name="title" type="text" maxlength="255" placeholder="What needs to get done?" required />
+
+            <label for="description">Description <span class="optional">Optional</span></label>
+            <textarea id="description" name="description" rows="3" placeholder="Add a few details"></textarea>
+
+            <div class="form-row">
+              <div>
+                <label for="priority">Priority</label>
+                <select id="priority" name="priority">
+                  <option value="LOW">Low</option>
+                  <option value="MEDIUM" selected>Medium</option>
+                  <option value="HIGH">High</option>
+                </select>
+              </div>
+              <div>
+                <label for="due-date">Due date <span class="optional">Optional</span></label>
+                <input id="due-date" name="dueDate" type="date" />
+              </div>
+            </div>
+
+            <button class="button button-primary submit-button" type="submit">
+              Add task <span aria-hidden="true">↗</span>
+            </button>
+          </form>
+        </aside>
+      </section>
+      <footer>TaskFlow API · Built to keep your day in motion.</footer>
+    </main>
+  </body>
+</html>
