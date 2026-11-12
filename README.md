@@ -58,6 +58,12 @@ Links:
 Notes: Built CI with Github Actions and created image on Docker Hub
 Issues: Nothing
 
+Stretch goal 2:
+
+Link: https://beamish-dusk-361d4b.netlify.app/
+Screenshots:
+![!\[screenshots/frontendWithApi.png\]](https://github.com/ckuncara/taskflow-api-final/blob/main/screenshots/frontendWithApi.png)
+
 ## Getting started
 
 ### Prerequisites
