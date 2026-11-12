@@ -50,6 +50,14 @@ Links: <https://...>
 Notes: <what you built and anything that didn't work>
 ```
 
+Stretch goal 1:
+Links:
+- https://github.com/ckuncara/taskflow-api-final/actions/runs/43165913902
+- https://hub.docker.com/repository/docker/sailormana/taskflow-api
+
+Notes: Built CI with Github Actions and created image on Docker Hub
+Issues: Nothing
+
 ## Getting started
 
 ### Prerequisites
